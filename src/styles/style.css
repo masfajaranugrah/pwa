@@ -1,0 +1,471 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;600&family=Pacifico&family=Silkscreen&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-image: linear-gradient(
+    109.6deg,
+    rgb(69, 129, 202) 18.9%,
+    rgb(82, 156, 181) 91.1%
+  );
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/*
+skip content
+*/
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background-color: #bf1722;
+  color: white;
+  padding: 8px;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/*
+hero
+*/
+.hero {
+  display: flex;
+  flex-direction: column;
+  min-height: 550px;
+  width: 80%;
+  text-align: center;
+  background: url('../public/images/hero.jpg');
+  background-position: center;
+  object-fit: cover;
+  padding: 0 10%;
+  background-size: cover;
+}
+
+/*
+btn
+*/
+.btn {
+  margin: auto;
+  padding: 0.5em 1em;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  background-color: rgb(65, 159, 203);
+  border: 1px solid transparent;
+  font-size: large;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn:hover {
+  background-color: rgb(0, 204, 255);
+}
+
+/* hero inner */
+.hero__title {
+  color: #fff;
+  font-weight: 500;
+  font-size: 36px;
+  text-align: center;
+  font-family: 'Lobster', cursive;
+}
+
+.hero__tagline {
+  color: #fff;
+  margin-top: 16px;
+  font-size: 18px;
+  font-weight: 550;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*
+  AppBar
+*/
+
+.app-bar {
+  padding: 8px 16px;
+  background-image: linear-gradient(
+    65.9deg,
+    rgba(85, 228, 224, 1) 5.5%,
+    rgba(75, 68, 224, 0.74) 54.2%,
+    rgba(64, 198, 238, 1) 55.2%,
+    rgba(177, 36, 224, 1) 98.4%
+  );
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.app-bar .app-bar__menu {
+  display: flex;
+  align-items: center;
+}
+
+.app-bar .app-bar__menu button {
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.app-bar .app-bar__brand {
+  display: flex;
+  align-items: center;
+}
+
+.app-bar .app-bar__brand h1 {
+  color: white;
+  text-transform: uppercase;
+  font-size: 13px;
+  user-select: none;
+  font-family: 'Lobster', cursive;
+}
+
+.app-bar .app-bar__navigation {
+  position: absolute;
+  top: 50px;
+  left: -180px;
+  width: 150px;
+  transition: all 0.3s;
+  padding: 8px;
+  background-color: rgba(64, 198, 238, 1) 55.2%;
+  overflow: hidden;
+  color: white;
+}
+
+.app-bar .app-bar__navigation.open {
+  left: 0;
+}
+
+.app-bar .app-bar__navigation ul li a {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  padding: 10px 10px 10px 10px;
+  margin-bottom: 5px;
+  width: 100%;
+  background-color: rgb(60, 147, 202);
+}
+
+/*
+  Main Content
+*/
+
+main {
+  padding: 32px;
+  flex: 1;
+}
+
+.content {
+  margin: 0 auto;
+  min-height: 100%;
+}
+
+.content .content__heading {
+  font-weight: normal;
+  text-align: center;
+  padding: 44px;
+}
+
+/*
+  restaurants
+*/
+
+.restaurants {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+/*
+  restaurant Item
+*/
+
+.restaurant-item {
+  width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.restaurant-item__header {
+  position: relative;
+}
+
+.restaurant-item .restaurant-item__header .restaurant-item__header__poster {
+  width: 100%;
+}
+
+.restaurant-item .restaurant-item__header .restaurant-item__header__rating {
+  position: absolute;
+  padding: 8px;
+  bottom: 20px;
+  left: 0;
+  display: inline-block;
+  background-color: black;
+  color: white;
+}
+
+.restaurant-item
+  .restaurant-item__header
+  .restaurant-item__header__rating
+  .restaurant-item__header__rating__score {
+  margin-left: 10px;
+}
+
+.restaurant-item .restaurant-item__content {
+  padding: 16px;
+}
+.restaurant-item:hover {
+  box-shadow: 10px 10px 5px 0 #8ccbf0;
+}
+
+.restaurant-item .restaurant-item__content h3 {
+  margin: 0 0 10px 0;
+}
+
+.restaurant-item .restaurant-item__content h3 a {
+  color: #db0000;
+  text-decoration: none;
+  padding: 15px 15px 15px 15px;
+}
+
+.restaurant-item .restaurant-item__content p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+/*
+  restaurant
+*/
+
+.restaurant {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px 16px;
+  background-color: #dbc9ab;
+}
+
+.restaurant .restaurant__poster {
+  width: 100%;
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+
+.restaurant .restaurant__info h4 {
+  margin: 8px 0;
+}
+.restaurant .restaurant__info h3 {
+  background-color: #dbc9ab;
+}
+.restaurant__info {
+  box-shadow: 0 4px 8px 0 #dbc9ab;
+  text-align: center;
+}
+.restaurant__description {
+  box-shadow: 0 4px 8px 0 #dbc9ab;
+}
+.restaurant__description h3 {
+  background-color: #dbc9ab;
+}
+
+/*
+  like
+*/
+.like {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #db0000;
+
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  border-radius: 50%;
+  border: 0;
+
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}
+
+/*
+  Footer
+*/
+
+footer {
+  padding: 16px;
+  text-align: center;
+  border-top: 3px groove black;
+  background-image: linear-gradient(
+    65.9deg,
+    rgba(85, 228, 224, 1) 5.5%,
+    rgba(75, 68, 224, 0.74) 54.2%,
+    rgba(64, 198, 238, 1) 55.2%,
+    rgba(177, 36, 224, 1) 98.4%
+  );
+}
+
+/* FORM */
+form {
+  margin: 2em 0;
+  padding: 50px;
+  border: 3px dotted #dbc9ab;
+  border-radius: 0 15px 0 15px;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  min-height: 1em;
+  padding: 15px 15px 15px 15px;
+  font-size: 1em;
+  font-weight: normal;
+  color: black;
+  background-color: #fff;
+  appearance: none;
+  outline: none;
+  border: 1px solid transparent;
+  border-bottom: 1px solid #dbc9ab;
+}
+
+.form-label {
+  padding-bottom: 10px;
+  font-weight: bold;
+  font-style: normal;
+  font-size: small;
+  color: crimson;
+}
+
+.mb-3 {
+  margin-bottom: 1.3em;
+  margin-top: 0.5em;
+}
+
+.submit-btn {
+  padding: 15px 15px 15px 15px;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  background-color: crimson;
+  border: 1px solid transparent;
+  font-size: large;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:hover,
+.submit-btn:hover {
+  background-color: #f0e68c;
+}
+
+/* DETAIL DRINK */
+
+.detail-drink {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-content: center;
+}
+
+.detail-drink li {
+  padding: 0.5em 0;
+  display: block;
+  text-decoration: none;
+  border: 0.5px solid #dbc9ab;
+  border-width: 0 0 0.5px;
+}
+
+/* DETAIL FooD */
+
+.detail-food {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-content: center;
+}
+
+.detail-food li {
+  padding: 0.5em 0;
+  display: block;
+  text-decoration: none;
+  background-color: #dbc9ab;
+  border: 0.5px solid #f0e3ca;
+  border-width: 0 0 0.5px;
+}
+
+/* DETAIL REVIEW */
+.detail-review {
+  max-width: 100%;
+  font-size: 1em;
+  text-align: center;
+}
+
+.detail-review-item {
+  color: black;
+  background-color: #dbc9ab;
+  margin-bottom: 1.5em;
+  padding: 1em 1em;
+}
+
+.detail-review-item:last-child {
+  margin-bottom: 0;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 1em;
+  color: crimson;
+  border-bottom: 1px solid black;
+}
+
+.review-name {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.review-date {
+  font-size: 0.8em;
+  font-weight: lighter;
+}
+
+.review-body {
+  padding: 1em;
+  text-align: left;
+}
+
+#query {
+  padding: 15px 15px 15px 15px;
+}
+
+.color {
+  background-color: #8ccbf0;
+}
